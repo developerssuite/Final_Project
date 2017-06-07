@@ -1,0 +1,241 @@
+{% extends extended_template %}
+{% load staticfiles %}
+{% block pagelinks %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/accountsetting.css' %}">
+{% endblock %}
+
+<{% block body %}
+<div class="content">
+  <div class="col-md-9">
+    <!-- start Account settings -->
+
+    <div class="userImgandName">
+      <div class="col-sm-3">
+        <div class="userimg">
+          <img class='img-responsive' src='{% static 'products/images/usericon.png' %}'>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+          {% if found %}
+        <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+          {% else %}
+              <h3>{{ request.user }}</h3>
+          {% endif %}
+      </div>
+      <div class="col-sm-3">
+        <button class='pull-right editUserImg-Name' type="button" name="editUserImg-Name">Edit</button>
+      </div>
+
+
+      <div class="col-sm-7 col-sm-push-3 user">
+        <form class="user-img-and-name" action="#" method="post">
+{#        <form class="user-img-and-name" action="index.html" method="post">#}
+          <input type="text" name="firstName" value="{{ user.first_name }}" placeholder="Enter First name"><br>
+          <input type="text" name="lastName" value="{{ user.last_name }}" placeholder="Enter Last name"><br>
+          <input type="file" name="userImg" value="" placeholder="Choose new img"><br>
+
+          <input type="submit" name="" value="Update">
+          <button type="button" name="button" class="cancel">Cancel</button>
+        </form>
+      </div>
+
+
+    </div>
+
+
+    <div class="user-more-info userImgandName">
+      <div class="col-sm-12 border">
+        <div class="col-md-3">
+          <h3>Skype Id</h3>
+        </div>
+
+        <div class="col-md-6">
+            {% if found %}
+          <h3>{{ user_profile.skype_id }}</h3>
+            {% else %}
+                <h3>...</h3>
+            {% endif %}
+        </div>
+
+        <div class="col-sm-3">
+          <button class='pull-right edit-skypeid' type="button" name="edit-skypeid">Edit</button>
+        </div>
+
+        <div class="col-sm-7 col-sm-push-3">
+          <form class="skypeform" action="#" method="post">
+{#          <form class="skypeform" action="index.html" method="post">#}
+            <input type="text" name="skypeid" value="{{ user_profile.skype_id }}" placeholder="Enter skype id"><br>
+            <input type="submit" name="" value="Update">
+            <button type="button" name="button" class="cancel">Cancel</button>
+          </form>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-12 border">
+        <div class="col-md-3">
+          <h3>Favorite Langauge</h3>
+        </div>
+
+        <div class="col-md-6">
+               {% if found %}
+          <h3>{{ user_profile.category }}</h3>
+            {% else %}
+                <h3>...</h3>
+            {% endif %}
+
+        </div>
+
+        <div class="col-sm-3">
+          <button class='pull-right edit-language' type="button" name="edit-language">Edit</button>
+        </div>
+
+
+        <div class="col-sm-7 col-sm-push-3">
+          <form class="flanguage" action="#" method="post">
+{#          <form class="flanguage" action="index.html" method="post">#}
+            <input type="text" name="language" value="{{ user_profile.language }}" placeholder="Enter Favorite language"><br>
+            <input type="submit" name="" value="Update">
+            <button type="button" name="button" class="cancel">Cancel</button>
+          </form>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-12 border">
+        <div class="col-md-3">
+          <h3>Description</h3>
+        </div>
+
+        <div class="col-md-6">
+                 {% if found %}
+          <h3>  {{ user_profile.description }}
+          </h3>
+            {% else %}
+                <h3>...</h3>
+            {% endif %}
+
+        </div>
+
+        <div class="col-sm-3">
+          <button class='pull-right edit-description' type="button" name="edit-description">Edit</button>
+        </div>
+
+        <div class="col-sm-7 col-sm-push-3">
+          <form class="description" action="#" method="post">
+{#          <form class="description" action="index.html" method="post">#}
+            <textarea name="description" placeholder="Enter new description"></textarea>
+            <br>
+            <input type="submit" name="{{ user_profile.description }}" value="Update">
+            <button type="button" name="button" class="cancel">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-sm-12 border">
+        <div class="col-md-3">
+          <h3>Phone Number</h3>
+        </div>
+
+        <div class="col-md-6">
+            {% if found %}
+          <h3>{{ user_profile.cell }}</h3>
+            {% else %}
+                <h3>...</h3>
+            {% endif %}
+
+        </div>
+
+        <div class="col-sm-3">
+          <button class='pull-right edit-phone' type="button" name="edit-phone">Edit</button>
+        </div>
+
+        <div class="col-sm-7 col-sm-push-3">
+          <form class="phone" action="#" method="post">
+{#          <form class="phone" action="index.html" method="post">#}
+            <input type="number" name="phone" value="{{ user_profile.cell }}" placeholder="Enter phone number"><br>
+            <input type="submit" name="" value="Update">
+            <button type="button" name="button" class="cancel">Cancel</button>
+          </form>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-12 border">
+        <div class="col-md-3">
+          <h3>Address</h3>
+        </div>
+
+        <div class="col-md-6">
+            {% if found %}
+          <h3>{{ user_profile.address }}</h3>
+            {% else %}
+                <h3>...</h3>
+            {% endif %}
+
+        </div>
+
+        <div class="col-sm-3">
+          <button class='pull-right edit-address' type="button" name="edit-address">Edit</button>
+        </div>
+
+
+        <div class="col-sm-7 col-sm-push-3">
+          <form class="address" action="#" method="post">
+{#          <form class="address" action="index.html" method="post">#}
+            <input type="text" name="address" value="{{ user_profile.address }}" placeholder="Enter new address"><br>
+            <input type="submit" name="" value="Update">
+            <button type="button" name="button" class="cancel">Cancel</button>
+          </form>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-12 border">
+        <div class="col-md-3">
+          <h3>Email</h3>
+        </div>
+
+        <div class="col-md-6">
+
+          <h3>...</h3>
+        </div>
+
+        <div class="col-sm-3">
+          <button class='pull-right edit-email' type="button" name="edit-email">Edit</button>
+        </div>
+
+        <div class="col-sm-7 col-sm-push-3">
+          <form class="email" action="#" method="post">
+{#          <form class="email" action="index.html" method="post">#}
+            <input type="email" name="email" value="{{ user_profile.email }}" placeholder="Enter new email"><br>
+            <input type="submit" name="" value="Update">
+            <button type="button" name="button" class="cancel">Cancel</button>
+          </form>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="col-sm-12">
+      <div class="delete-account-button">
+        <button class='' type="button" name="delete-account">Delete my Account</button>
+      </div>
+    </div>
+  </div>
+
+
+      <div class="col-sm-3 text-center rightside">
+        {% include 'products/right_column_page.html' %}
+      </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends extended_template %}
+{% load hitcount_tags %}
+{% load staticfiles %}
+{% load comments %}
+{% load comments_xtd %}
+{% block pagelinks %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/postview.css' %}">
+{% endblock %}
+
+
+{% block body %}
+
+     <div class="content">
+      <div class="col-sm-9 leftside">
+        <hr>
+        <div class="postview">
+            <div class="post-img">
+              <img class='img-responsive' src="{{ product.product_logo.url }}" alt="">
+            </div>
+
+            <div class="productclear clearfix"></div>
+            <div class="post-info">
+              <h3>{{ product.title }}</h3>
+              <h4><strong>{{ product.category }}</strong></h4>
+              <div class="user"><img src="{% static 'products/images/usericon.png' %}" alt=""> {{ product.user }}</div>
+
+                <div class="rates">
+                  {% if likes == "Yes" %}
+
+                  {% load likes_inclusion_tags %}
+                    <span class="NumLikes" style="display: inline-block">{% likes product %}</span>
+
+                  {% else %}
+
+                  <span class="NumLikes">0 <img src="{% static 'products/images/Post-View-like.png' %}" alt=""></span>
+
+                  {% endif %}
+                    {% get_hit_count for product as total_hits %}
+                    {% get_comment_count for product as comment_count %}
+                    <span class="views" style="display: inline-block">{{ total_hits }} <img src="{% static 'products/images/Post-View-views-icon.png' %}" alt=""></span>
+                    <span class="comments" style="display: inline-block">{{ comment_count }} <img src="{% static 'products/images/Post-View-commentimg.png' %}" alt=""></span>
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="product-overview">
+              <p class="overview">{{ product.description }}</p>
+              <a href="{{ product.url }}"><button class='download-resources button center-block' type="button" name="download-resources">Download Resource</button></a>
+            </div>
+
+        </div><br><br>
+
+        {% get_comment_count for product as comment_count %}
+           <div class="text-center" style="padding-top:20px">
+             <a href="{% url 'products:home' %}">Back to the Resources</a>
+             &nbsp;&sdot;&nbsp;
+             {{ comment_count }} comments have been posted.
+           </div>
+
+           <div class="comment">
+               {% render_comment_form for product %}
+           </div>
+
+           <div id="" style=" ">
+           {% if comment_count %}
+           <hr/>
+           <ul class="media-list">
+             {% render_xtdcomment_tree for product %}
+           </ul>
+           {% endif %}
+            </div>
+
+      </div>
+        <div class="col-sm-3 text-center rightside">
+        {% include 'products/right_column_page.html' %}
+      </div>
+    </div>
+
+{% endblock %}
+{% block inline_javascript %}
+    {% get_hit_count_js_variables for product as hitcount %}
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $.postCSRF("{{ hitcount.ajax_url }}", { hitcountPK : "{{ hitcount.pk }}" })
+        .done(function(data){
+          $('<i />').text(data.hit_counted).attr('id','hit-counted-value').appendTo('#hit-counted');
+          $('#hit-response').text(data.hit_message);
+      }).fail(function(data){
+          console.log('POST failed');
+          console.log(data);
+      });
+    });
+    </script>
+{% endblock %}

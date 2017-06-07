@@ -1,0 +1,343 @@
+.username{
+    padding:0;
+    background-color: white !important;
+    border: 0 !important;
+    color: hsl(0, 0%, 19%) !important;
+    }
+.username:hover{
+  background-color: hsla(0, 0%, 0%, 0) !important;
+  border: 1px solid hsl(0, 0%, 100%) !important;
+  color: hsl(0, 0%, 100%) !important
+    }
+
+
+.content .leftside .post-img img{
+    border: 2px solid hsl(0, 0%, 81%);
+    border-radius: 14px;
+    margin: 0 0px 8px 0;
+    width: 227px;
+    height: 190px;
+    margin-top: -6px;
+    }
+
+.content .leftside .post-img{width: 230px;float: left}
+.content .leftside .post-info{margin-left: 230px}
+
+.content .rates{
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    width: auto;
+    margin-top: 70px;
+    margin-left: 10px;
+    }
+
+
+
+.content .leftside .download-resources {
+    background-color: hsl(223, 100%, 65%);
+    border: 0;
+    border-radius: 5px;
+    margin-top: 32px;
+    height: 55px;
+    color: white;
+    width: 190px;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+}
+a, a:hover{text-decoration: none}
+.content .leftside .download-resources:hover {
+  background-color: hsla(0, 0%, 0%, 0);
+      border: 2px solid hsl(0, 0%, 87%);
+      border-radius: 5px;
+      margin-top: 32px;
+      color: hsl(0, 0%, 60%);
+}
+
+
+.user-img img{    width: 44px;
+    height: 32px;
+    border: 2px solid hsl(0, 0%, 87%);
+    border-radius: 5px;
+    float: left;}
+
+
+.right-from-user-img{width: calc(100% - 60px);float: right;margin-bottom: 60px;}
+.comments .comemnt-form{border-right: 1px solid hsl(0, 0%, 87%);padding: 5px 0px;}
+.comments .comemnt-form .commentinput{
+    display: block;
+    min-width: 95%;
+    max-width: 95%;
+    height: 205px;
+    border: 2px solid hsl(0, 0%, 86%);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 20px;
+    }
+
+
+.comments .post-username{font-family: Helveticaneuecyr,verdana !important;
+    font-size: 19px !important;
+    margin-top: 4px !important;}
+.comments .post-username~p{    font-family: Helveticaneuecyr,verdana;font-size: 15px}
+
+.replylink{
+    text-decoration: underline;
+    color: hsl(0, 0%, 27%);
+    margin-left: 11px;
+    }
+
+.content .rightside {}
+
+.content .post-username2{    margin-left: 50px;margin-top: 15px !important}
+
+.comments .replyinput{
+    border: 2px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+    margin: 0 auto;
+    height: 34px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 85%;
+    margin-left: 5%;
+    }
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-family: Helveticaneuecyr,verdana;
+    font-size: 13px;
+}
+
+.replylink2{margin-left: 25px;}
+
+.postview .overview{font-family: Helveticaneuecyr,verdana !important;font-size: 15.5px !important;}
+
+.content .leftside h3 {
+    margin-top: 0;
+    font-family: arial;
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 14px;
+}
+
+.content .leftside h4{    font-family: Helveticaneuecyr,verdana;
+    font-size: 16px;
+    margin-left: 16px;}
+.content .leftside .user{font-family: Helveticaneuecyr,verdana;
+    font-size: 16px;}
+
+.content .leftside .user img{    margin-left: 12px;
+    height: 19px;
+    margin-top: -7px;
+    padding-right: 6px;}
+
+.rates img{width: 22px;margin: 0 7px;height: 20px;}
+
+.comment-submit-input{
+    width: 212px;
+    height: 55px;
+    margin-bottom: 20px;
+    border: 0;
+    background-color: hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    }
+
+
+hr {
+    border-top: 2px solid hsl(0, 0%, 96%) !important;
+    margin-bottom: 45px !important;
+}
+
+.comment-submit-input:hover{ background-color: hsl(223, 100%, 65%)}
+
+
+.productclear{display: none}
+@media (max-width: 535px) {
+  .productclear{display: block}
+  .content .leftside .post-info {
+    margin-left: 0}
+}
+
+
+@media (max-width: 1244px) {
+  .right-from-user-img {
+    width: calc(100% - 60px);
+    float: right;
+    margin-bottom: 40px !important}
+
+    .content .rightside {
+      height: auto !important;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .comments .comemnt-form {border-right: 0 !important}
+  .content .rightside .button{width: 30% !important}
+}
+
+@media (max-width: 500px) {
+  .user-img img {
+    width: 65px;
+    height: 51px;
+    border: 2px solid hsl(0, 0%, 87%);
+    border-radius: 5px;
+    margin: 17px auto;
+    float: none;
+}
+.right-from-user-img {
+    width: 100%;
+    float: none;
+    margin-bottom: 40px !important;
+}
+
+.content .leftside .post-img {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .content .rightside {
+    }
+}
+
+
+@media (min-width: 769px) {
+  footer form img {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+}
+}
+
+
+@media (width: 640px ) {
+  .content .rightside {
+    margin-top: 372px !important}
+}
+
+
+@media (width: 1024px) {
+  .content .rightside {
+    }
+}
+
+
+
+.content .rightside .button {
+    width: 80% !important;
+    background-color: hsla(0, 0%, 0%, 0);
+    border: 2px solid hsl(0, 0%, 87%);
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 32px;
+    color: hsl(0, 0%, 60%);
+    z-index: 99999 !important;
+}
+
+
+.dropdown-menu{    z-index: 9999999999999999;    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out}
+.dropdown-menu li{width: 100%}
+.dropdown-menu li a{    color: hsl(180, 8%, 57%) !important;
+    border-bottom: 1px solid hsl(0, 0%, 87%) !important;}
+.dropdown-menu .logout a{border: 0 !important}
+
+.dropdown-menu li:hover{padding-left: 5px}
+.username-btn{    border: 0 !important;    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+}
+.dropdown-toggle{    border-right: 0;
+    border-top: 0;
+    border-color: hsl(0, 0%, 100%);
+    border-bottom: 0;    transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out}
+.dropdown-menu li:hover a{background-color: hsl(223, 100%, 65%) !important; border: 0 !important; color: white !important}
+
+
+
+@media (width: 1024px) {
+  .btn-group{margin-top: 6px;margin-bottom: 10px;margin-right: -26px;}
+  .dropdown-menu{width: auto !important}
+}
+
+@media (width: 768px) {
+  .btn-group{margin-top: 9px !important;margin-bottom: 7px;}
+  .dropdown-menu{width: auto !important}
+}
+
+@media (width: 640px) {
+  .btn-group{margin-top: 17px}
+  .dropdown-menu{      margin-top: 0 !important;
+    margin-left: -80px !important;
+    width: auto !important}
+}
+
+@media (width: 480px) {
+  .btn-group{margin-top: 17px}
+  .dropdown-menu{      margin-top: 0 !important;
+    margin-left: -80px !important;
+    width: auto !important}
+}
+
+@media (max-width: 991px) {
+  .btn-group{margin-top: 58px;margin-bottom: 7px;}
+  .dropdown-menu{      margin-top: 0 !important;
+    margin-left: -80px !important;
+    width: auto !important}
+}
+
+.username-btn, .dropdown-toggle{background-color: hsl(223, 100%, 74%)}
+
+
+@media (width: 1264px) {
+  .btn-group{margin-top: -10px !important}
+}
+
+@media (width: 1280px) {
+  .btn-group{margin-top: -10px !important}
+}
+
+
+.btn-group > .btn + .dropdown-toggle {
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: hsl(223, 100%, 74%);
+    border-left: 2px solid hsl(0, 0%, 100%);
+}
+
+
+
+@media (max-width: 320px)
+{
+  .btn-group {
+    margin-top: 53px;
+    margin-bottom: 7px;
+}
+}

@@ -1,0 +1,101 @@
+.team_members .member img{
+    width: 100%;
+    height: 161px;
+    border: 2px solid hsl(0, 0%, 68%);
+    border-radius: 6px;
+    margin: 0 0px 8px 0;
+    }
+
+
+.content .rightside {
+    margin-top: -20px;
+}
+
+.content .leftside h3 {
+    margin-top: 35px;
+    font-family: Helveticaneuecyr,verdana;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.content .leftside p{
+    width: 97%;
+    font-family: Helveticaneuecyr,verdana;
+    font-size: 16px;
+}
+
+
+.leftside{margin-top: -20px;}
+
+.content .rightside .button {
+    width: 80%;
+    background-color: hsla(0, 0%, 0%, 0);
+    border: 2px solid hsl(0, 0%, 87%);
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 73px;
+    color: hsl(0, 0%, 60%)}
+
+.team_members h3{margin-bottom: 20px}
+
+
+.content .leftside .member-name, .content .leftside .member-job{
+    margin-top: 0;
+    font-family: Helveticaneuecyr,verdana;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.content .leftside .member-job{font-weight: normal}
+.content .leftside .member-email {
+    width: 97%;
+    font-family: Helveticaneuecyr,verdana;
+    font-size: 14px;
+    margin-bottom: 70px;
+}
+.right-contact-info{font-size: 19px;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 40px;
+    margin-bottom: 50px}
+
+
+@media (width: 320px) {
+.content .rightside .button{margin-left: 20px}
+.member{margin-left: -32px}
+}
+
+
+@media (width: 480px) {
+.member{
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 17px;
+}
+.content .rightside .button {margin-left: 12px}
+}
+
+@media (width: 640px) {
+  .log-sign-buttons{margin-top: -53px !important}
+
+  .member{width: 70%; margin: 0 auto;}
+  .team_members {margin-left: -30px}
+}
+
+@media (width: 768px) {
+
+  .member{width: 60%; margin: 0 auto;}
+  .team_members {margin-left: -30px}
+  .rightside{border: 0 !important; height: auto !important;}
+
+}
+
+@media (width: 1024px) {
+  .team_members .col-md-3{width: 50% !important}
+  .content .rightside {
+    margin-top: -20px;
+    height: auto !important;
+    }
+}

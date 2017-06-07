@@ -1,0 +1,99 @@
+{% extends extended_template %}
+{% load staticfiles %}
+{% block pagelinks %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contactus.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="content"    >
+      <div class="col-md-9">
+        <div class="contact">
+          <div class="col-md-6">
+            <h3>Get in touch</h3>
+            <p>If you have any query or you want to suggest anything please fill the form below. We will get back to you within 24 hours.</p>
+          </div>
+          <div class="col-md-6">
+            <img class='img-responsive contact-map-img' src="{% static 'products/images/Contact-usmap.png' %}" alt="">
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="col-md-9">
+            <div class="form">
+              <div class="col-sm-9">
+                <h3>Send us a Message</h3>
+              </div>
+              <div class="col-sm-3">
+                <img class='message-box' src="{% static 'products/images/message-box.png' %}" alt="">
+              </div><div class="clearfix"></div>
+              <form action="{% url 'products:contact_us' %}" method="POST">
+                  {% csrf_token %}
+                <div class='col-md-6'>
+                  <div class="contact-input">
+                    <label for="">Your Name</label>
+                    <input type="text"  maxlength="50" name="name" placeholder="First and last Name" required="required">
+                  </div>
+                </div>
+
+
+                <div class='col-md-6'>
+                  <div class="contact-input">
+                    <label for="">Email Address</label>
+                    <input type="email" maxlength="50" name="email" placeholder="Email" required="required">
+                  </div>
+                </div>
+
+
+                <div class='col-md-6'>
+                  <div class="contact-input">
+                    <label for="">Phone</label>
+                    <input onfocus="this.type='number';" maxlength="50" name="phoneNumber" placeholder="Phone" required="required">
+                  </div>
+                </div>
+
+
+                <div class='col-md-6'>
+                  <div class="contact-input">
+                    <label for="">Company</label>
+                    <input type="text" name="company" maxlength="50" placeholder="Company" required="required">
+                  </div>
+                </div>
+
+
+                <div class='col-md-12'>
+                  <div class="relative contact-input">
+                    <label for="">Message</label>
+                    <textarea name="message" placeholder='Hi, do you have a moment to talk about  ...' required="required"></textarea>
+                    <button type="submit" name="button"><img src="{% static 'products/images/submit-contact.png' %}" alt=""></button>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+          </div>
+
+
+          <div class="col-md-3 nopadding">
+            <div class="contact-info">
+              <h3>Contact Information</h3><br>
+              <h4>Developerssuite, Inc.<br>
+              237 Sector H12<br>
+              Islamabad, 44000<br>
+              PAK<br><br></h4>
+
+              <h3>Customer Service</h3><br>
+
+
+              <h4>hours:<br><br>9am - 6pm PST<br>
+              Monday - Friday</h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+             <div class="col-sm-3 text-center rightside">
+        {% include 'products/right_column_page.html' %}
+      </div>
+    </div>
+{% endblock %}

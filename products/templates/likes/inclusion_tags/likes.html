@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load staticfiles %}
+{% if import_js %}
+    <script type="text/javascript" src="{{ STATIC_URL }}likes/includes/likes.js"></script>
+{% endif %}
+
+{% if likes_enabled %}
+    <div class="likes">
+        {{ content_obj.vote_total }}
+        <span>
+            {% if can_vote %}
+                <span><a class="liker" href="{% url "like" content_type content_obj.id 1 %}" rel="nofollow">&nbsp;<img  src="{%  static 'products/images/Post-View-like.png' %}"> </a></span>
+            {% else %}
+                {% comment %}{% trans "Likes" %}{% endcomment %}
+                 <img src="{%  static 'products/images/Post-View-like.png' %}" >
+            {% endif %}
+        </span>
+    </div>
+{% endif %}

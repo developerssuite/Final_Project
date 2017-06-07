@@ -1,0 +1,90 @@
+.userImgandName{border: 1px solid hsl(0, 0%, 97%);width: 90%;margin-top: 20px;margin-left: 2%;overflow: hidden;background-color: hsl(0, 0%, 100%);padding: 20px 3%;}
+.userImgandName button{top: -5px;right: 0;background-color: white;width: 60px;height: 28px;border: 1px solid #ddd;}
+.userImgandName h3{ margin: 0;
+    padding: 0;
+    font-family: Helveticaneuecyr,verdana;
+    font-size: 19px}
+.userImgandName div{padding: 0}
+.border{border-bottom: 2px solid hsl(216, 100%, 97%);box-shadow: 0px 5px 2px -5px #ffffff;margin-bottom: 28px;}
+.border h3{font-size: 16px;margin-bottom: 15px;}
+
+button{transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out}
+button:hover{background-color: hsl(223, 100%, 65%);color: white;border: 0;}
+
+
+.delete-account-button{margin-left: 4px;margin-top: 20px;margin-bottom: 20px;}
+.delete-account-button button{
+    border: 1px solid hsl(0, 100%, 50%);
+    padding: 8px;
+    background-color: hsl(0, 90%, 47%);
+    color: hsl(0, 0%, 100%);
+    }
+.border form input{width: 75%;
+    padding: 8px 10px;
+    border: 1px solid hsl(0, 0%, 87%)}
+.border form input[type='submit']{
+    width: 36.5%;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    height: 35px !important;
+    background-color: hsl(223, 100%, 65%);
+    border: 0;
+    color: white;
+    }
+.border form button{width: 38% !important;height: 35px !important;top: -1px !important;}
+
+.border form{display: none}
+
+.description textarea{
+    max-width: 75%;
+    padding: 7px 10px;
+    min-width: 75%;
+    width: 75%;
+    border: 1px solid #ddd;
+}
+
+
+.user form input {
+    width: 75%;
+    padding: 8px 10px;
+    border: 1px solid hsl(0, 0%, 87%);
+}
+
+.user form input[type='submit']{
+    width: 36.5%;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    height: 35px !important;
+    background-color: hsl(223, 100%, 65%);
+    border: 0;
+    color: white;
+    }
+.user form button{width: 38% !important;height: 35px !important;top: -1px !important;}
+
+.user form{display: none}
+
+
+@media (width: 320px) {
+  .user form, .border form{margin-top: 44px}
+  .user form input, .border form input{width: 100%}
+  .border div button{margin-top: -20px}
+  .user form input[type='submit'] {width: 49.5%;}
+  .user form button {width: 48% !important}
+
+  .border form input[type='submit'] {width: 49.5%;}
+  .border form button {width: 48% !important}
+  .description textarea{min-width: 100%;max-width: 100%;width: 100%}
+}
+
+
+@media (width: 480px) {
+  .border div  button{top: -55px}
+}
+
+@media (width: 640px) {
+  .border div  button{top: -35px}
+}

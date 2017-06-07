@@ -1,0 +1,90 @@
+{% extends 'account/base.html' %}
+{% load i18n %}
+{% load account %}
+{% load account socialaccount %}
+{% load staticfiles %}
+{% block pagelinks %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="content">
+
+      <div class="signup">
+        <div class="container">
+          <h3 class="text-center">Sign up</h3>
+          <div class="border">
+            <div class="col-sm-6 text-center">
+              <div class="signup-buttons">
+                <h4 class="h3">Sign up with</h4>
+                <a href="{% provider_login_url 'google' %}"><button class='google-signup' type="button" name="google-signup">Google</button></a>
+                <a href="{% provider_login_url 'slack'  method='oauth2'%}"><button class='slack-signup' type="button" name="slack-signup">Slack</button></a>
+                <a href="{% provider_login_url 'linkedin' method='oauth2' %}"><button class='linkedin-signup' type="button" name="linkedin-signup">LinkedIn</button></a>
+                <a href="{% provider_login_url 'github' %}"><button class='github-signup' type="button" name="github-signup">Github</button></a>
+              </div>
+            </div>
+            <div class="col-sm-6 text-center">
+               <div style="margin-top: 10px">
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger" style="width: 100%;  margin-bottom: 1px;
+                                                                              height: 30px;
+                                                                              line-height:30px;
+                                                                              padding:0px 15px;">
+                            <strong style=" font-size: 12px ">{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                      {% endif %}
+
+    {% for error in form.non_field_errors %}
+          <div class="alert alert-danger" style="width: 100%;  margin-bottom: 1px;
+  height: 30px;
+  line-height:30px;
+  padding:0px 15px;">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+            </div>
+              <form class="signup-form signup" style="margin-top: 80px" id="signup_form" action="{% url 'account_signup' %}" method="post">
+                  {% csrf_token %}
+                <div>
+                  <input maxlength="50" type="text" name="first_name" value="" placeholder="First name" required="required">
+                </div>
+
+                <div>
+                  <input maxlength="50" type="text" name="last_name" value="" placeholder="Last name" required="required">
+                </div>
+
+                <div>
+                  <input maxlength="50" type="text" name="username" value="" placeholder="Username" required="required">
+                </div>
+
+                <div>
+                  <input maxlength="50" type="email" name="email" value="" placeholder="Email" required="required">
+                </div>
+
+                <div>
+                  <input maxlength="50" type="password" name="password1" value="" placeholder="Password" required="required">
+                </div>
+
+
+                  <div>
+                    <input maxlength="50" type="password" name="password2" value="" placeholder="Password again" required="required">
+                  </div>
+
+                  <div>
+                    <input onclick="return IsEmpty();" class='signupbtn' type="Submit" name="" value="Sign up">
+                  </div>
+              </form>
+            </div>
+            <div class="clearfix"></div>
+            <p class="text-center agree-p">
+              By clicking Sign up you are acknowledging that you
+              agree to our Terms and Conditions when using our product.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
